@@ -1,0 +1,24 @@
+{
+  "name": "angjsassignment",
+  "description": "corestructure for assignment",
+  "main": "index.js",
+  "authors": [
+    "Patricio Morales"
+  ],
+  "license": "ISC",
+  "homepage": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-bootstrap": "^2.5.0",
+    "angular-animate": "^1.6.6",
+    "angular-route": "^1.6.6"
+  }
+}

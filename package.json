@@ -1,0 +1,16 @@
+{
+  "name": "angjsassignment",
+  "version": "1.0.0",
+  "description": "corestructure for assignment",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server",
+    "postinstall":"bower install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patricio Morales",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}

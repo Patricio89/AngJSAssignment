@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <title>FrontEnd Uppgift</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- bower dependancies -->
+
+  <!--  <script src="bower_components/angular/angular.js"></script> -->
+    <script src="bower_components/angular/angular.min.js"></script>
+   <!-- <script src="bower_components/angular-animate/angular-animate.js"></script> -->
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <!-- <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script> -->
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!-- <script src="bower_components/angular-route/angular-route.js"></script> -->
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+    <!-- custom dependancys -->
+
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+
+    <script src="app/products/product.module.js"></script>
+    <script src="app/products/product.service.js"></script>
+    <script src="app/products/product-list.controller.js"></script>
+    <script src="app/products/products.component.js"></script>
+    <script src="app/products/product-detailedList.controller.js"></script>
+
+    <script src="app/navbar/navbar.module.js"></script>
+    <script src="app/navbar/navbar.controller.js"></script>
+    <script src="app/navbar/navbar.component.js"></script>
+
+    <script src="app/login/login.module.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/login/login.service.js"></script>
+    <script src="app/login/login.component.js"></script>
+    <script src="app/login/create-login.controller.js"></script>
+
+    <script src="app/shoppingCart/cart.module.js"></script>
+    <script src="app/shoppingCart/cart.service.js"></script>
+    <script src="app/shoppingCart/cart.controller.js"></script>
+    <script src="app/shoppingCart/cart.component.js"></script>
+
+
+</head>
+
+<body ng-app="app">
+
+<h3>Welcome to Gunhildes Webstore</h3>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Home</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/products">Products</a></li>
+        </ul>
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{isLoggedIn ? '/shoppingcart' : '/login'}}">{{isLoggedIn ? 'Shoppingcart' : 'Log in'}}
+            </a>
+            <li ng-controller="loginController" ng-hide="isLoggedIn"><a href="/register">Create account</a></li>
+            <li ng-controller="loginController" ng-show="isLoggedIn"><a ng-click="logOut()" href="/" >Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div ng-view></div>
+
+<footer class="navbar-fixed-bottom navbar-inverse">
+    <div class="container-fluid">
+        <p class="pull-right">&copy; 2017 Gunhildes Webstore AB.</p>
+    </div>
+</footer>
+
+</body>
+
+</html>
